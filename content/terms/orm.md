@@ -16,6 +16,24 @@ There is a fundamental mismatch between how relational databases store data (row
 
 A team building a REST API with Python and SQLAlchemy defines a `User` model class with fields like `id`, `email`, and `created_at`. Instead of writing `SELECT * FROM users WHERE email = 'jane@example.com'`, the developer writes `User.query.filter_by(email='jane@example.com').first()`. The ORM generates the SQL, executes it, and returns a `User` object with attributes ready to use. When the team switches from MySQL to PostgreSQL, they change one connection string and the ORM handles the dialect differences.
 
+```python
+from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy.orm import declarative_base
+from datetime import datetime
+
+Base = declarative_base()
+
+class User(Base):
+    __tablename__ = "users"
+    id = Column(Integer, primary_key=True)
+    email = Column(String, unique=True, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+# Query — no raw SQL needed
+user = session.query(User).filter_by(email="jane@example.com").first()
+print(user.email, user.created_at)
+```
+
 ## When to use
 
 - CRUD-heavy applications where most database interactions are straightforward reads and writes

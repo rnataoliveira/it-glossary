@@ -16,6 +16,31 @@ As front-end applications grew from simple pages to complex, interactive experie
 
 A project management app like Trello has a board view where multiple components need access to the same data: the sidebar shows project stats, the main area renders columns with cards, and a modal displays card details. Using a state management library like Zustand, the application stores all board data in a single store. When a user drags a card from one column to another, a single action updates the store, and every subscribed component — the column counts, the card positions, the activity log — re-renders with consistent data automatically.
 
+```js
+import { create } from "zustand";
+
+const useBoardStore = create((set) => ({
+  columns: [],
+  moveCard: (cardId, fromCol, toCol) =>
+    set((state) => {
+      const card = state.columns[fromCol].cards.find((c) => c.id === cardId);
+      return {
+        columns: state.columns.map((col, i) => {
+          if (i === fromCol) return { ...col, cards: col.cards.filter((c) => c.id !== cardId) };
+          if (i === toCol) return { ...col, cards: [...col.cards, card] };
+          return col;
+        }),
+      };
+    }),
+}));
+
+// Any component can read and update the store
+function ColumnCount({ index }) {
+  const count = useBoardStore((s) => s.columns[index]?.cards.length);
+  return <span>{count} cards</span>;
+}
+```
+
 ## When to use
 
 - When multiple unrelated components need to read and write the same piece of data

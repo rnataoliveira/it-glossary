@@ -16,6 +16,16 @@ Server-Side Rendering solves the problem of showing content quickly, but the HTM
 
 A Next.js e-commerce site server-renders a product page with images, a description, price, and an "Add to Cart" button. The browser displays this HTML immediately. Then React's JavaScript bundle loads and hydration begins: React walks the existing DOM, confirms it matches its expected output, and attaches an onClick handler to the "Add to Cart" button, an onChange handler to the quantity selector, and initializes the image carousel's swipe logic. The page goes from visible to fully interactive in a smooth transition.
 
+```js
+import { hydrateRoot } from "react-dom/client";
+import App from "./App";
+
+// The server already rendered <div id="root">...</div> with full HTML.
+// hydrateRoot attaches event handlers to the existing DOM
+// instead of re-creating it from scratch.
+hydrateRoot(document.getElementById("root"), <App />);
+```
+
 ## When to use
 
 - Any application using SSR or SSG with a framework like React, Vue, or Angular that needs client-side interactivity after the initial HTML render

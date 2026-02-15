@@ -16,6 +16,35 @@ Running a handful of containers manually is manageable, but coordinating hundred
 
 An e-commerce company deploys its checkout service as a Kubernetes Deployment with 3 replicas. They define a Horizontal Pod Autoscaler that adds pods when CPU exceeds 70%. During a flash sale, traffic spikes and Kubernetes automatically scales the checkout service from 3 to 12 pods in under a minute. A Service resource load-balances traffic across all healthy pods. When the sale ends, Kubernetes scales back down to 3 pods, reducing compute costs.
 
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: checkout-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: checkout
+  template:
+    metadata:
+      labels:
+        app: checkout
+    spec:
+      containers:
+        - name: checkout
+          image: registry.example.com/checkout:1.4.2
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+```
+
 ## When to use
 
 - When managing tens or hundreds of containerized services that need automated scheduling and scaling

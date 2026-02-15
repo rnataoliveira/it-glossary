@@ -16,6 +16,31 @@ Dynamic server rendering for every request is wasteful when the content is the s
 
 A developer documentation site built with Astro pulls content from 500 Markdown files and an API containing code examples. At build time, the framework fetches all content, renders every page into static HTML with syntax-highlighted code blocks, and outputs the result to a dist folder. The files are deployed to Cloudflare Pages. When a developer in Tokyo requests a page, it is served from the nearest CDN edge node in under 50ms with no origin server involved.
 
+```js
+// Next.js page with static site generation
+export async function getStaticProps() {
+  const docs = await fetchAllDocs();
+
+  return {
+    props: { docs },
+    revalidate: 3600, // Regenerate at most once per hour
+  };
+}
+
+export async function getStaticPaths() {
+  const slugs = await fetchAllDocSlugs();
+
+  return {
+    paths: slugs.map((slug) => ({ params: { slug } })),
+    fallback: "blocking",
+  };
+}
+
+export default function DocPage({ docs }) {
+  return <article>{/* render docs */}</article>;
+}
+```
+
 ## When to use
 
 - Content that changes infrequently and is the same for all users, such as blogs, documentation, marketing sites, and changelogs

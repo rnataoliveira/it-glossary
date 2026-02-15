@@ -16,6 +16,34 @@ Client-side rendered applications ship an empty HTML shell and rely on JavaScrip
 
 An online news publication uses Next.js with SSR for its article pages. When a reader clicks a link shared on social media, the Next.js server fetches the article content from the CMS, renders the full HTML including headline, body text, and metadata, and sends it to the browser. The reader sees the article text within milliseconds of the first byte arriving, even before any JavaScript loads. Social media platforms also get proper Open Graph tags for rich link previews because the meta tags are present in the initial HTML response.
 
+```js
+// Next.js page with server-side rendering
+export async function getServerSideProps(context) {
+  const { slug } = context.params;
+  const article = await cms.getArticle(slug);
+
+  return {
+    props: { article },
+  };
+}
+
+export default function ArticlePage({ article }) {
+  return (
+    <>
+      <Head>
+        <title>{article.title}</title>
+        <meta property="og:title" content={article.title} />
+        <meta property="og:image" content={article.heroImage} />
+      </Head>
+      <article>
+        <h1>{article.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: article.body }} />
+      </article>
+    </>
+  );
+}
+```
+
 ## When to use
 
 - Content-heavy pages where SEO is critical, such as e-commerce product pages, blog posts, or documentation sites

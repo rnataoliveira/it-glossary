@@ -16,6 +16,29 @@ Before smartphones and tablets became dominant, websites were designed for a sin
 
 A news website uses a responsive layout. On desktop, articles display in a three-column grid with a sidebar for trending stories and a large hero image above the fold. On tablet, the grid collapses to two columns and the sidebar moves below the main content. On mobile, it becomes a single-column stack where the hero image scales down, the navigation collapses into a hamburger menu, and touch targets for links are enlarged to at least 44px for comfortable tapping. All of this is one codebase using CSS Grid, flexible images, and media queries at 768px and 1024px breakpoints.
 
+```css
+/* Mobile-first base styles */
+.article-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* Tablet — 2 columns */
+@media (min-width: 768px) {
+  .article-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop — 3 columns with sidebar */
+@media (min-width: 1024px) {
+  .article-grid {
+    grid-template-columns: repeat(3, 1fr) 280px;
+  }
+}
+```
+
 ## When to use
 
 - Any public-facing website where users access content from phones, tablets, laptops, and desktops

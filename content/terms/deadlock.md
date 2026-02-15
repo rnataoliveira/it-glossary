@@ -14,6 +14,22 @@ Deadlocks are not a feature — they are an emergent failure mode of concurrent 
 
 A banking system has two accounts, A and B. Thread 1 processes a transfer from A to B: it locks Account A, then tries to lock Account B. Simultaneously, Thread 2 processes a transfer from B to A: it locks Account B, then tries to lock Account A. Thread 1 holds A and waits for B; Thread 2 holds B and waits for A. Neither can proceed — the system is deadlocked. The fix is to always acquire locks in a consistent order (e.g., always lock the account with the lower ID first), breaking the circular wait condition.
 
+```python
+import threading
+
+lock_a = threading.Lock()
+lock_b = threading.Lock()
+
+def transfer(from_lock, to_lock, amount):
+    # Always acquire locks in a consistent order (by id) to prevent deadlock
+    first, second = sorted([from_lock, to_lock], key=id)
+    with first:
+        with second:
+            # safe — no circular wait is possible
+            from_lock.balance -= amount
+            to_lock.balance += amount
+```
+
 ## When to use
 
 - When designing any system that acquires multiple locks or resources, you must actively consider deadlock prevention strategies

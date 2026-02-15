@@ -16,6 +16,26 @@ Traditional server management forces teams to provision, patch, and scale infras
 
 A SaaS company needs to generate PDF invoices whenever a customer completes a purchase. They create an AWS Lambda function triggered by an SQS message. The function receives the order data, renders a PDF using a template, uploads it to S3, and sends a download link via email. During normal hours, the function runs a few times per minute. On billing day, it scales automatically to handle thousands of concurrent invocations without any capacity planning. The company pays only for the milliseconds of actual execution.
 
+```js
+// AWS Lambda handler
+exports.handler = async (event) => {
+  const order = JSON.parse(event.Records[0].body);
+
+  const pdf = await renderInvoice(order);
+  await s3.putObject({
+    Bucket: "invoices",
+    Key: `${order.id}.pdf`,
+    Body: pdf,
+  }).promise();
+
+  await sendEmail(order.email, `Your invoice is ready`, {
+    attachmentUrl: `https://invoices.example.com/${order.id}.pdf`,
+  });
+
+  return { statusCode: 200 };
+};
+```
+
 ## When to use
 
 - For event-driven workloads like file processing, webhook handlers, or scheduled jobs

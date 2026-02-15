@@ -16,6 +16,19 @@ Databases handle concurrent operations from many users simultaneously — transf
 
 A banking application transfers $500 from Account A to Account B. The transaction debits Account A and credits Account B. With ACID guarantees, if the system crashes after debiting Account A but before crediting Account B, the entire transaction rolls back (Atomicity) — no money is lost. Meanwhile, another transaction checking both balances sees either the state before the transfer or after, never a partial state where $500 has vanished (Isolation).
 
+```sql
+BEGIN;
+
+UPDATE accounts SET balance = balance - 500 WHERE id = 'A';
+UPDATE accounts SET balance = balance + 500 WHERE id = 'B';
+
+-- If anything goes wrong, roll back both operations
+-- ROLLBACK;
+
+-- If both succeed, make the changes permanent
+COMMIT;
+```
+
 ## When to use
 
 - Financial systems where incorrect balances or duplicate transactions are unacceptable

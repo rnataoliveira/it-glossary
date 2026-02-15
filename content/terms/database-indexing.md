@@ -15,6 +15,21 @@ Without indexes, a database must scan every row in a table to find matching resu
 
 An online marketplace has a `products` table with 12 million rows. Users frequently search by `category_id` and sort by `price`. Without an index, each search takes over 3 seconds. After adding a composite index on `(category_id, price)`, the same queries return in under 20 milliseconds. The database uses a B-tree to navigate directly to the matching category and returns results already sorted by price.
 
+```sql
+-- Create a composite index for the common query pattern
+CREATE INDEX idx_products_category_price
+ON products (category_id, price);
+
+-- Check that the query uses the index instead of a full table scan
+EXPLAIN SELECT * FROM products
+WHERE category_id = 12
+ORDER BY price ASC
+LIMIT 20;
+
+-- Output shows "Index Scan using idx_products_category_price"
+-- instead of "Seq Scan on products"
+```
+
 ## When to use
 
 - Columns frequently used in WHERE clauses, JOIN conditions, or ORDER BY

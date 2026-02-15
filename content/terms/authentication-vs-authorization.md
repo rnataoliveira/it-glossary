@@ -16,6 +16,31 @@ Systems need to distinguish between identity verification and access control bec
 
 A developer logs into their company's internal dashboard using SSO with their corporate Google account — that is authentication. Once logged in, the system checks their role: as a "backend-engineer" they can view production logs and restart staging services, but they cannot access the billing panel or modify infrastructure settings reserved for the "platform-admin" role. The authentication layer confirmed their identity; the authorization layer enforced what they are permitted to do.
 
+```js
+// Authentication middleware — verifies WHO the user is
+function authenticate(req, res, next) {
+  const token = req.headers.authorization?.split(" ")[1];
+  if (!token) return res.status(401).json({ error: "Not authenticated" });
+
+  req.user = jwt.verify(token, process.env.JWT_SECRET);
+  next();
+}
+
+// Authorization middleware — checks WHAT they can do
+function authorize(...allowedRoles) {
+  return (req, res, next) => {
+    if (!allowedRoles.includes(req.user.role)) {
+      return res.status(403).json({ error: "Not authorized" });
+    }
+    next();
+  };
+}
+
+app.get("/admin/billing", authenticate, authorize("platform-admin"), (req, res) => {
+  res.json({ billing: getBillingData() });
+});
+```
+
 ## When to use
 
 - When designing any system that serves more than one user or role

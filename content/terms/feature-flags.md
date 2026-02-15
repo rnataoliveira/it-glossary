@@ -16,6 +16,17 @@ Releasing new features traditionally requires a full deployment, which couples t
 
 A product team at a B2B SaaS company builds a new dashboard redesign. They wrap the new UI behind a feature flag called `new-dashboard-v2`. First, they enable it only for internal employees to dogfood for a week. Then they roll it out to 5% of customers, monitoring error rates and page load times. After confirming metrics are stable, they increase to 25%, then 50%, then 100% over three weeks. When a critical rendering bug is reported by the 25% cohort, they disable the flag in the admin panel within seconds, reverting all users to the old dashboard while the fix is developed.
 
+```js
+const flags = require("./featureFlags");
+
+app.get("/dashboard", authenticate, (req, res) => {
+  if (flags.isEnabled("new-dashboard-v2", { userId: req.user.id })) {
+    return res.render("dashboard-v2", { data: getDashboardData() });
+  }
+  res.render("dashboard", { data: getDashboardData() });
+});
+```
+
 ## When to use
 
 - When rolling out a risky or high-impact feature gradually to a subset of users before full release

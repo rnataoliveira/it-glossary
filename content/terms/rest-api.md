@@ -16,6 +16,23 @@ Before REST, web services relied on heavyweight protocols like SOAP with complex
 
 An e-commerce platform exposes a REST API for its product catalog. A client sends `GET /api/v1/products/42` and receives a JSON response with the product details and a `200 OK` status. To update the price, the client sends `PUT /api/v1/products/42` with the updated JSON body. The server validates the input, persists the change, and returns `200 OK` with the updated resource. A mobile app team and a web frontend team both consume the same API without any coordination beyond reading the API documentation.
 
+```http
+GET /api/v1/products/42 HTTP/1.1
+Host: store.example.com
+Accept: application/json
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 42,
+  "name": "Wireless Keyboard",
+  "price": 59.99,
+  "category": "peripherals",
+  "inStock": true
+}
+```
+
 ## When to use
 
 - Public-facing APIs that need to be easy for third-party developers to adopt

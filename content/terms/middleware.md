@@ -16,6 +16,36 @@ Every web application needs to perform repetitive tasks on incoming requests —
 
 An Express.js API uses a chain of middleware functions. First, `helmet()` sets security headers. Next, `cors()` allows requests from approved origins. Then, a custom `authenticateJWT` middleware verifies the bearer token and attaches the user object to `req.user`. A `rateLimiter` middleware checks Redis to enforce 100 requests per minute per API key. Only after all four middleware functions pass does the request reach the route handler that queries the database and returns the response. If any middleware rejects the request, the pipeline short-circuits and returns an appropriate error.
 
+```js
+const express = require("express");
+const helmet = require("helmet");
+const cors = require("cors");
+const app = express();
+
+app.use(helmet());
+app.use(cors({ origin: "https://app.example.com" }));
+
+// Custom auth middleware
+function authenticateJWT(req, res, next) {
+  const token = req.headers.authorization?.split(" ")[1];
+  if (!token) return res.status(401).json({ error: "Token required" });
+
+  try {
+    req.user = jwt.verify(token, process.env.JWT_SECRET);
+    next();
+  } catch {
+    res.status(403).json({ error: "Invalid token" });
+  }
+}
+
+app.use("/api", authenticateJWT);
+
+app.get("/api/orders", (req, res) => {
+  // req.user is available here thanks to the middleware
+  res.json({ orders: getOrdersForUser(req.user.id) });
+});
+```
+
 ## When to use
 
 - You have cross-cutting concerns (auth, logging, rate limiting) that apply to many or all routes

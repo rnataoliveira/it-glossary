@@ -17,6 +17,26 @@ Browsers enforce the Same-Origin Policy, which prevents a web page from making r
 
 A React application hosted at https://app.acme.com makes a POST request with a JSON body to an API at https://api.acme.com/orders. Because the request uses Content-Type: application/json (a non-simple header), the browser first sends a preflight OPTIONS request to the API asking "does this origin have permission?" The API server responds with headers: `Access-Control-Allow-Origin: https://app.acme.com`, `Access-Control-Allow-Methods: GET, POST`, and `Access-Control-Allow-Headers: Content-Type, Authorization`. The browser validates the preflight response, confirms the origin is allowed, and proceeds with the actual POST request. Without these headers, the browser would block the response entirely.
 
+```js
+const express = require("express");
+const cors = require("cors");
+const app = express();
+
+app.use(cors({
+  origin: "https://app.acme.com",
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  maxAge: 86400, // Cache preflight for 24 hours
+}));
+
+// The browser preflight request and response headers:
+// OPTIONS /orders → 204
+//   Access-Control-Allow-Origin: https://app.acme.com
+//   Access-Control-Allow-Methods: GET, POST
+//   Access-Control-Allow-Headers: Content-Type, Authorization
+//   Access-Control-Max-Age: 86400
+```
+
 ## When to use
 
 - When your front-end application and API are served from different domains or subdomains, which is the standard architecture for SPAs with separate API servers

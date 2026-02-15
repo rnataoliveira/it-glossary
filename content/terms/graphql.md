@@ -17,6 +17,34 @@ Facebook created GraphQL in 2012 to solve a problem their mobile apps faced: RES
 
 A social media app needs to display a user's profile page showing their name, avatar, last 5 posts, and each post's comment count. Instead of calling `GET /users/7`, then `GET /users/7/posts?limit=5`, then `GET /posts/:id/comments/count` for each post, the client sends one GraphQL query: `{ user(id: 7) { name, avatar, posts(last: 5) { title, commentCount } } }`. The server resolves all the data and returns a single JSON response shaped exactly like the query.
 
+```graphql
+# Query
+query {
+  user(id: 7) {
+    name
+    avatar
+    posts(last: 5) {
+      title
+      commentCount
+    }
+  }
+}
+
+# Response
+{
+  "data": {
+    "user": {
+      "name": "Jane",
+      "avatar": "https://cdn.example.com/jane.jpg",
+      "posts": [
+        { "title": "GraphQL Tips", "commentCount": 12 },
+        { "title": "API Design", "commentCount": 8 }
+      ]
+    }
+  }
+}
+```
+
 ## When to use
 
 - Mobile applications where bandwidth and round trips are expensive

@@ -16,6 +16,25 @@ Manually configuring servers, networks, and cloud resources through web consoles
 
 A platform team uses Terraform to define their AWS infrastructure. A `main.tf` file declares a VPC, subnets, an RDS PostgreSQL instance, an ECS cluster, and an Application Load Balancer. When a new developer joins and needs a personal staging environment, they run `terraform workspace new dev-maria` and `terraform apply`. In under 10 minutes, an identical copy of the production infrastructure is running. When a security audit asks what changed last quarter, the team points to the Git history of the Terraform repository.
 
+```hcl
+resource "aws_db_instance" "postgres" {
+  identifier        = "app-db"
+  engine            = "postgres"
+  engine_version    = "15.4"
+  instance_class    = "db.t3.medium"
+  allocated_storage = 50
+  db_name           = "appdb"
+  username          = var.db_username
+  password          = var.db_password
+
+  vpc_security_group_ids = [aws_security_group.db.id]
+  db_subnet_group_name   = aws_db_subnet_group.main.name
+
+  backup_retention_period = 7
+  skip_final_snapshot     = false
+}
+```
+
 ## When to use
 
 - When managing cloud infrastructure that needs to be consistent across multiple environments (dev, staging, production)

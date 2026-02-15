@@ -17,6 +17,28 @@ HTTP follows a request-response model — the client asks, the server answers, a
 
 A collaborative document editor like Google Docs uses WebSockets to sync changes between users. When User A types a sentence, the browser sends the operation over an open WebSocket connection to the server. The server processes the change, applies conflict resolution (via operational transforms or CRDTs), and immediately pushes the update to User B's open WebSocket connection — all within milliseconds, without either client needing to poll for changes.
 
+```js
+// Server (Node.js with ws)
+const { WebSocketServer } = require("ws");
+const wss = new WebSocketServer({ port: 8080 });
+
+wss.on("connection", (ws) => {
+  ws.on("message", (data) => {
+    // Broadcast the edit to all other clients
+    wss.clients.forEach((client) => {
+      if (client !== ws && client.readyState === 1) {
+        client.send(data);
+      }
+    });
+  });
+});
+
+// Client (browser)
+const ws = new WebSocket("ws://localhost:8080");
+ws.onopen = () => ws.send(JSON.stringify({ op: "insert", pos: 12, text: "Hello" }));
+ws.onmessage = (event) => applyRemoteEdit(JSON.parse(event.data));
+```
+
 ## When to use
 
 - Real-time applications: chat systems, multiplayer games, live notifications, collaborative editing

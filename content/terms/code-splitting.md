@@ -15,6 +15,27 @@ Modern web applications can easily produce JavaScript bundles of several megabyt
 
 A SaaS analytics dashboard built with React uses route-based code splitting via React.lazy and dynamic imports. The main bundle contains the login page, navigation shell, and the primary dashboard view — about 120KB gzipped. When a user navigates to the reports section for the first time, a separate 85KB chunk containing the charting library and report components is fetched on demand. The admin settings panel, used by only 5% of users, lives in its own 40KB chunk that most users never download at all. The initial page load went from 350KB to 120KB, cutting Time to Interactive by 40%.
 
+```js
+import { lazy, Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
+
+// These chunks are only loaded when the user navigates to the route
+const Reports = lazy(() => import("./pages/Reports"));
+const AdminSettings = lazy(() => import("./pages/AdminSettings"));
+
+function App() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/reports" element={<Reports />} />
+        <Route path="/admin" element={<AdminSettings />} />
+      </Routes>
+    </Suspense>
+  );
+}
+```
+
 ## When to use
 
 - Any application with multiple routes or views where users typically visit only a subset during a session

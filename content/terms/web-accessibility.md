@@ -16,6 +16,27 @@ Over one billion people worldwide live with some form of disability, including v
 
 A banking application implements accessibility throughout its interface. All form fields have associated `<label>` elements so screen readers announce "Account number" when the input is focused. Error messages are linked to their fields using `aria-describedby`, so a blind user hears "Invalid account number — must be 10 digits" in context. The transfer confirmation modal traps focus so keyboard users cannot accidentally tab into the background. Color is never the only indicator of status — successful transactions show a green banner with a checkmark icon and the text "Transfer complete," so color-blind users get the same information.
 
+```html
+<form>
+  <label for="account-number">Account number</label>
+  <input
+    id="account-number"
+    type="text"
+    aria-describedby="account-error"
+    aria-invalid="true"
+  />
+  <span id="account-error" role="alert">
+    Invalid account number — must be 10 digits
+  </span>
+</form>
+
+<!-- Status banner — not color-only -->
+<div role="status" class="banner success">
+  <svg aria-hidden="true"><!-- checkmark icon --></svg>
+  Transfer complete
+</div>
+```
+
 ## When to use
 
 - Every public-facing website and web application — accessibility is not a feature toggle, it is a baseline quality standard

@@ -15,6 +15,29 @@ In distributed systems, a failing downstream service can cascade failures upstre
 
 A payment gateway depends on an external fraud detection API. Under normal conditions, the circuit is "closed" and every transaction is checked. When the fraud API starts returning 503 errors, the circuit breaker counts five consecutive failures within ten seconds and trips to "open." For the next 30 seconds, all fraud-check calls return immediately with a fallback response — the system flags the transaction for manual review instead of blocking checkout entirely. After 30 seconds, the circuit moves to "half-open," letting one probe request through. If it succeeds, the circuit closes and normal operation resumes.
 
+```js
+const CircuitBreaker = require("opossum");
+
+const fraudCheck = async (transaction) => {
+  const res = await fetch("https://fraud-api.example.com/check", {
+    method: "POST",
+    body: JSON.stringify(transaction),
+  });
+  return res.json();
+};
+
+const breaker = new CircuitBreaker(fraudCheck, {
+  timeout: 3000,        // Fail if call takes longer than 3s
+  errorThresholdPercentage: 50,
+  resetTimeout: 30000,  // Try again after 30s
+});
+
+breaker.fallback(() => ({ status: "manual-review" }));
+
+// Usage
+const result = await breaker.fire(transaction);
+```
+
 ## When to use
 
 - Your service depends on an external or remote system that may become temporarily unavailable

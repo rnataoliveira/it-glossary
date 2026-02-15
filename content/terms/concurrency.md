@@ -16,6 +16,17 @@ Real-world software constantly deals with tasks that involve waiting — network
 
 A web server receives 500 incoming HTTP requests per second. Each request queries a database (taking ~50ms of waiting) and then formats a response. Without concurrency, the server processes one request at a time, handling at most 20 requests per second. With concurrency — using async I/O or a thread pool — the server starts processing new requests while others are waiting on database responses. The same single-core machine can now handle hundreds of requests per second because it uses wait time productively instead of blocking.
 
+```js
+// Fetch three independent APIs concurrently instead of sequentially
+const [users, orders, inventory] = await Promise.all([
+  fetch("/api/users").then((r) => r.json()),
+  fetch("/api/orders").then((r) => r.json()),
+  fetch("/api/inventory").then((r) => r.json()),
+]);
+
+// Total time ≈ slowest request, not sum of all three
+```
+
 ## When to use
 
 - When your application performs I/O-bound work like HTTP calls, file reads, or database queries and you want to overlap the waiting periods

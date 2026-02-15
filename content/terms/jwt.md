@@ -15,6 +15,26 @@ Traditional session-based authentication requires the server to store session st
 
 A user logs into a SaaS application. The auth server validates their credentials and returns a JWT containing their user ID, email, role, and an expiration time, all signed with the server's private key. On every subsequent API request, the client sends this token in the `Authorization: Bearer <token>` header. Each microservice independently verifies the signature using the public key and extracts the user's role from the payload to make authorization decisions — no database lookup or shared session store required.
 
+```js
+const jwt = require("jsonwebtoken");
+
+// After login — create the token
+const token = jwt.sign(
+  { userId: 42, email: "jane@example.com", role: "editor" },
+  process.env.JWT_SECRET,
+  { expiresIn: "1h" }
+);
+
+// On each request — verify and decode
+try {
+  const payload = jwt.verify(token, process.env.JWT_SECRET);
+  console.log(payload.userId); // 42
+  console.log(payload.role);   // "editor"
+} catch (err) {
+  console.error("Invalid or expired token");
+}
+```
+
 ## When to use
 
 - When building stateless REST or GraphQL APIs that need to authenticate requests without server-side sessions
