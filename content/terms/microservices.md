@@ -2,9 +2,8 @@
 title: "Microservices"
 letter: "M"
 categories:
-  - "explain-architecture"
-  - "create-system-design"
-  - "improve-maintainability"
+  - "architecture"
+  - "backend"
 shortDefinition: "An architectural style where an application is composed of small, independent services that communicate over a network."
 ---
 

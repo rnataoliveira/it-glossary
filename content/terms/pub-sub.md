@@ -2,8 +2,8 @@
 title: "Pub/Sub"
 letter: "P"
 categories:
-  - "create-system-design"
-  - "explain-architecture"
+  - "architecture"
+  - "backend"
 shortDefinition: "A messaging pattern where publishers send messages to topics and subscribers receive them, without either side knowing the other."
 ---
 

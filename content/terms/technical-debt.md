@@ -2,8 +2,8 @@
 title: "Technical Debt"
 letter: "T"
 categories:
-  - "improve-maintainability"
-  - "explain-architecture"
+  - "architecture"
+  - "devops"
 shortDefinition: "The implied cost of future rework caused by choosing an easy or quick solution now instead of a better approach that would take longer."
 ---
 

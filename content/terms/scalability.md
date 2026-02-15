@@ -2,8 +2,8 @@
 title: "Scalability"
 letter: "S"
 categories:
-  - "create-system-design"
-  - "explain-architecture"
+  - "architecture"
+  - "performance"
 shortDefinition: "The ability of a system to handle growing amounts of work by adding resources rather than rewriting code."
 ---
 

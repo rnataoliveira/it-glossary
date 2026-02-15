@@ -2,9 +2,8 @@
 title: "Reverse Proxy"
 letter: "R"
 categories:
-  - "create-system-design"
-  - "improve-performance"
-  - "back-end-applications"
+  - "backend"
+  - "devops"
 shortDefinition: "A server that sits in front of backend servers, forwarding client requests and providing load balancing, caching, and SSL termination."
 ---
 

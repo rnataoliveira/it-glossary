@@ -2,9 +2,8 @@
 title: "ORM"
 letter: "O"
 categories:
-  - "improve-maintainability"
-  - "improve-developer-experience"
-  - "back-end-applications"
+  - "backend"
+  - "data"
 shortDefinition: "A technique that maps database tables to programming language objects, allowing developers to interact with data using code instead of raw SQL."
 ---
 

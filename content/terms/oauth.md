@@ -2,9 +2,8 @@
 title: "OAuth"
 letter: "O"
 categories:
-  - "explain-architecture"
-  - "improve-reliability"
-  - "improve-security"
+  - "security"
+  - "backend"
 shortDefinition: "An open standard for delegated authorization that lets users grant third-party apps limited access without sharing passwords."
 ---
 

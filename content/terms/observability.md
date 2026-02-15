@@ -2,8 +2,8 @@
 title: "Observability"
 letter: "O"
 categories:
-  - "improve-reliability"
-  - "create-system-design"
+  - "reliability"
+  - "devops"
 shortDefinition: "The ability to understand a system's internal state by examining its outputs — logs, metrics, and traces."
 ---
 

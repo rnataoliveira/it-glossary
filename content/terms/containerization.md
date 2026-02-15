@@ -2,9 +2,8 @@
 title: "Containerization"
 letter: "C"
 categories:
-  - "explain-architecture"
-  - "improve-maintainability"
-  - "improve-developer-experience"
+  - "devops"
+  - "cloud"
 shortDefinition: "Packaging an application with its dependencies into an isolated, portable unit that runs consistently across environments."
 ---
 

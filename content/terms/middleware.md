@@ -2,9 +2,8 @@
 title: "Middleware"
 letter: "M"
 categories:
-  - "explain-architecture"
-  - "improve-maintainability"
-  - "back-end-applications"
+  - "backend"
+  - "architecture"
 shortDefinition: "Software that sits between a request and response, processing or transforming data as it passes through the application pipeline."
 ---
 

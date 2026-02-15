@@ -2,8 +2,8 @@
 title: "CAP Theorem"
 letter: "C"
 categories:
-  - "create-system-design"
-  - "explain-architecture"
+  - "architecture"
+  - "data"
 shortDefinition: "A distributed system can provide at most two of three guarantees: Consistency, Availability, and Partition tolerance."
 ---
 

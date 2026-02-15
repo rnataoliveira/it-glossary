@@ -2,9 +2,8 @@
 title: "Sharding"
 letter: "S"
 categories:
-  - "improve-performance"
-  - "create-system-design"
-  - "improve-scalability"
+  - "data"
+  - "performance"
 shortDefinition: "Splitting a database into smaller, independent pieces called shards, each holding a subset of the total data."
 ---
 

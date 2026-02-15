@@ -2,9 +2,8 @@
 title: "CDN"
 letter: "C"
 categories:
-  - "improve-performance"
-  - "create-system-design"
-  - "improve-scalability"
+  - "performance"
+  - "architecture"
 shortDefinition: "A geographically distributed network of servers that delivers cached content from locations closest to the user."
 ---
 

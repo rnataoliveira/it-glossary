@@ -2,9 +2,8 @@
 title: "Concurrency"
 letter: "C"
 categories:
-  - "avoid-state-bugs"
-  - "improve-performance"
-  - "back-end-applications"
+  - "backend"
+  - "performance"
 shortDefinition: "The ability of a system to handle multiple tasks in overlapping time periods, not necessarily simultaneously."
 ---
 

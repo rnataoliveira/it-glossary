@@ -2,8 +2,8 @@
 title: "Caching"
 letter: "C"
 categories:
-  - "improve-performance"
-  - "create-system-design"
+  - "performance"
+  - "architecture"
 shortDefinition: "Storing copies of data in a faster-access layer to reduce latency and load on the original source."
 ---
 

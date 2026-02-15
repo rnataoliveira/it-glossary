@@ -2,8 +2,8 @@
 title: "Eventual Consistency"
 letter: "E"
 categories:
-  - "create-system-design"
-  - "explain-architecture"
+  - "architecture"
+  - "data"
 shortDefinition: "A consistency model where replicas may temporarily diverge but are guaranteed to converge to the same state given enough time."
 ---
 

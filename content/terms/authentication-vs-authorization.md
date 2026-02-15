@@ -2,9 +2,8 @@
 title: "Authentication vs Authorization"
 letter: "A"
 categories:
-  - "improve-reliability"
-  - "explain-architecture"
-  - "improve-security"
+  - "security"
+  - "backend"
 shortDefinition: "Authentication verifies who a user is; authorization determines what they are allowed to do."
 ---
 

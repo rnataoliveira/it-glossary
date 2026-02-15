@@ -2,8 +2,7 @@
 title: "SSL/TLS"
 letter: "S"
 categories:
-  - "improve-reliability"
-  - "improve-security"
+  - "security"
 shortDefinition: "Cryptographic protocols that encrypt data in transit between clients and servers, ensuring privacy and integrity."
 ---
 

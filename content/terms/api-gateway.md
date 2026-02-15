@@ -2,8 +2,8 @@
 title: "API Gateway"
 letter: "A"
 categories:
-  - "create-system-design"
-  - "explain-architecture"
+  - "architecture"
+  - "backend"
 shortDefinition: "A single entry point that sits between clients and backend services, handling routing, authentication, and rate limiting."
 ---
 

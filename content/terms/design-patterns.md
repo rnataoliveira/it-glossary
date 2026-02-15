@@ -2,8 +2,7 @@
 title: "Design Patterns"
 letter: "D"
 categories:
-  - "improve-maintainability"
-  - "explain-architecture"
+  - "architecture"
 shortDefinition: "Reusable solutions to commonly occurring problems in software design, providing a shared vocabulary for developers."
 ---
 

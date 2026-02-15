@@ -2,9 +2,7 @@
 title: "State Management"
 letter: "S"
 categories:
-  - "avoid-state-bugs"
-  - "explain-architecture"
-  - "front-end-applications"
+  - "frontend"
 shortDefinition: "Patterns and tools for managing, storing, and synchronizing application data that changes over time across components."
 ---
 

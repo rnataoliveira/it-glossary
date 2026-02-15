@@ -2,9 +2,8 @@
 title: "Rate Limiting"
 letter: "R"
 categories:
-  - "improve-reliability"
-  - "improve-performance"
-  - "create-system-design"
+  - "backend"
+  - "security"
 shortDefinition: "Controlling the number of requests a client can make to a service within a given time window to prevent abuse and protect resources."
 ---
 

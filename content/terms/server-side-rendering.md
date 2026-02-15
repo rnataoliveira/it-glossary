@@ -2,9 +2,8 @@
 title: "Server-Side Rendering"
 letter: "S"
 categories:
-  - "improve-performance"
-  - "explain-architecture"
-  - "front-end-applications"
+  - "frontend"
+  - "performance"
 shortDefinition: "Generating the full HTML for a page on the server for each request, delivering ready-to-display content to the browser."
 ---
 

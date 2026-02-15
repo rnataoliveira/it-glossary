@@ -2,9 +2,8 @@
 title: "DNS"
 letter: "D"
 categories:
-  - "create-system-design"
-  - "improve-reliability"
-  - "back-end-applications"
+  - "devops"
+  - "architecture"
 shortDefinition: "The Domain Name System translates human-readable domain names into IP addresses so browsers can locate servers."
 ---
 

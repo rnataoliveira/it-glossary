@@ -2,9 +2,7 @@
 title: "Virtual DOM"
 letter: "V"
 categories:
-  - "explain-architecture"
-  - "improve-performance"
-  - "front-end-applications"
+  - "frontend"
 shortDefinition: "An in-memory representation of the real DOM that allows frameworks to batch and optimize UI updates efficiently."
 ---
 

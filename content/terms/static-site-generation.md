@@ -2,9 +2,8 @@
 title: "Static Site Generation"
 letter: "S"
 categories:
-  - "improve-performance"
-  - "explain-architecture"
-  - "front-end-applications"
+  - "frontend"
+  - "performance"
 shortDefinition: "Pre-rendering all pages at build time into static HTML files that can be served directly from a CDN."
 ---
 

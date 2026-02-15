@@ -2,9 +2,8 @@
 title: "Infrastructure as Code"
 letter: "I"
 categories:
-  - "improve-maintainability"
-  - "improve-reliability"
-  - "improve-developer-experience"
+  - "devops"
+  - "cloud"
 shortDefinition: "Managing and provisioning infrastructure through machine-readable configuration files instead of manual processes."
 ---
 

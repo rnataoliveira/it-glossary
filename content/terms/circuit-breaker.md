@@ -2,8 +2,8 @@
 title: "Circuit Breaker"
 letter: "C"
 categories:
-  - "improve-reliability"
-  - "create-system-design"
+  - "architecture"
+  - "reliability"
 shortDefinition: "A stability pattern that stops calling a failing service after repeated failures, giving it time to recover before retrying."
 ---
 

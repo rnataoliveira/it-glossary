@@ -2,9 +2,8 @@
 title: "Kubernetes"
 letter: "K"
 categories:
-  - "create-system-design"
-  - "improve-reliability"
-  - "improve-scalability"
+  - "devops"
+  - "cloud"
 shortDefinition: "An open-source container orchestration platform that automates deployment, scaling, and management of containerized applications."
 ---
 

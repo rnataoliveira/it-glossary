@@ -2,8 +2,8 @@
 title: "Code Splitting"
 letter: "C"
 categories:
-  - "improve-performance"
-  - "front-end-applications"
+  - "frontend"
+  - "performance"
 shortDefinition: "Breaking a JavaScript bundle into smaller chunks that are loaded on demand, reducing the initial page load size."
 ---
 

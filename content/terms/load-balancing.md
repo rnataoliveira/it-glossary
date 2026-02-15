@@ -2,9 +2,8 @@
 title: "Load Balancing"
 letter: "L"
 categories:
-  - "improve-performance"
-  - "create-system-design"
-  - "improve-reliability"
+  - "architecture"
+  - "performance"
 shortDefinition: "Distributing incoming network traffic across multiple servers to ensure no single server is overwhelmed."
 ---
 

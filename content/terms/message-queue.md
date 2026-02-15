@@ -2,9 +2,8 @@
 title: "Message Queue"
 letter: "M"
 categories:
-  - "create-system-design"
-  - "improve-reliability"
-  - "improve-scalability"
+  - "architecture"
+  - "backend"
 shortDefinition: "A middleware component that stores messages between producers and consumers, enabling asynchronous and decoupled communication."
 ---
 

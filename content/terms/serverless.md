@@ -2,9 +2,8 @@
 title: "Serverless"
 letter: "S"
 categories:
-  - "explain-architecture"
-  - "create-system-design"
-  - "improve-scalability"
+  - "cloud"
+  - "backend"
 shortDefinition: "A cloud execution model where the provider dynamically manages server allocation, charging only for actual compute time used."
 ---
 

@@ -2,8 +2,7 @@
 title: "Trade-offs"
 letter: "T"
 categories:
-  - "explain-architecture"
-  - "create-system-design"
+  - "architecture"
 shortDefinition: "The deliberate choice to gain one quality (speed, simplicity, cost) at the expense of another — the core skill of software engineering."
 ---
 

@@ -2,9 +2,8 @@
 title: "SQL vs NoSQL"
 letter: "S"
 categories:
-  - "create-system-design"
-  - "explain-architecture"
-  - "back-end-applications"
+  - "data"
+  - "architecture"
 shortDefinition: "Two database paradigms — SQL uses structured tables with strict schemas, while NoSQL offers flexible document, key-value, or graph models."
 ---
 

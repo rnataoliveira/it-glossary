@@ -2,9 +2,8 @@
 title: "Replication"
 letter: "R"
 categories:
-  - "improve-reliability"
-  - "create-system-design"
-  - "improve-scalability"
+  - "data"
+  - "reliability"
 shortDefinition: "Copying data across multiple database servers to improve availability, fault tolerance, and read performance."
 ---
 

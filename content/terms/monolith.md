@@ -2,7 +2,7 @@
 title: "Monolith"
 letter: "M"
 categories:
-  - "explain-architecture"
+  - "architecture"
 shortDefinition: "A single, unified application where all components share one codebase, one deployment, and one process."
 ---
 

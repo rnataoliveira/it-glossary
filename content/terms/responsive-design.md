@@ -2,9 +2,7 @@
 title: "Responsive Design"
 letter: "R"
 categories:
-  - "improve-maintainability"
-  - "front-end-applications"
-  - "mobile-development"
+  - "frontend"
 shortDefinition: "A design approach where web pages adapt their layout and content to fit any screen size or device."
 ---
 

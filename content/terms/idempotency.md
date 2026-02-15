@@ -2,9 +2,8 @@
 title: "Idempotency"
 letter: "I"
 categories:
-  - "improve-reliability"
-  - "avoid-state-bugs"
-  - "create-system-design"
+  - "architecture"
+  - "reliability"
 shortDefinition: "The property of an operation where performing it multiple times produces the same result as performing it once."
 ---
 

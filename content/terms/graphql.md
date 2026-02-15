@@ -2,10 +2,8 @@
 title: "GraphQL"
 letter: "G"
 categories:
-  - "explain-architecture"
-  - "create-system-design"
-  - "back-end-applications"
-  - "front-end-applications"
+  - "architecture"
+  - "backend"
 shortDefinition: "A query language for APIs that lets clients request exactly the data they need in a single request."
 ---
 

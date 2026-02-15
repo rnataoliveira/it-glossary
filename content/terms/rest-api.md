@@ -2,9 +2,8 @@
 title: "REST API"
 letter: "R"
 categories:
-  - "explain-architecture"
-  - "create-system-design"
-  - "back-end-applications"
+  - "architecture"
+  - "backend"
 shortDefinition: "An architectural style for web APIs that uses HTTP methods and resource-based URLs to perform CRUD operations."
 ---
 

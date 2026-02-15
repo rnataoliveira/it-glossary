@@ -2,8 +2,8 @@
 title: "JWT"
 letter: "J"
 categories:
-  - "explain-architecture"
-  - "improve-security"
+  - "security"
+  - "backend"
 shortDefinition: "JSON Web Token — a compact, URL-safe token format that encodes claims as a signed JSON payload for stateless authentication."
 ---
 

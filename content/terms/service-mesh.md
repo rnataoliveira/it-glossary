@@ -2,9 +2,8 @@
 title: "Service Mesh"
 letter: "S"
 categories:
-  - "create-system-design"
-  - "explain-architecture"
-  - "observability"
+  - "architecture"
+  - "devops"
 shortDefinition: "A dedicated infrastructure layer that handles service-to-service communication, providing observability, security, and traffic management."
 ---
 

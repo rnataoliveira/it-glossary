@@ -2,8 +2,8 @@
 title: "CQRS"
 letter: "C"
 categories:
-  - "create-system-design"
-  - "explain-architecture"
+  - "architecture"
+  - "backend"
 shortDefinition: "Command Query Responsibility Segregation — a pattern that separates read and write operations into different models."
 ---
 

@@ -2,8 +2,7 @@
 title: "SOLID"
 letter: "S"
 categories:
-  - "improve-maintainability"
-  - "explain-architecture"
+  - "architecture"
 shortDefinition: "Five design principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) that make object-oriented code more maintainable."
 ---
 

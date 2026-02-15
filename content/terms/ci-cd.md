@@ -2,8 +2,7 @@
 title: "CI/CD"
 letter: "C"
 categories:
-  - "improve-reliability"
-  - "improve-maintainability"
+  - "devops"
 shortDefinition: "Continuous Integration and Continuous Delivery — automating the process of building, testing, and deploying code changes."
 ---
 

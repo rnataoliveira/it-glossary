@@ -2,9 +2,7 @@
 title: "Hydration"
 letter: "H"
 categories:
-  - "explain-architecture"
-  - "improve-performance"
-  - "front-end-applications"
+  - "frontend"
 shortDefinition: "The process of attaching JavaScript event handlers to server-rendered HTML, making a static page interactive on the client."
 ---
 

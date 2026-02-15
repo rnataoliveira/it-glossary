@@ -2,7 +2,8 @@
 title: "Deadlock"
 letter: "D"
 categories:
-  - "avoid-state-bugs"
+  - "backend"
+  - "reliability"
 shortDefinition: "A situation where two or more processes are stuck waiting for each other to release resources, so none can proceed."
 ---
 

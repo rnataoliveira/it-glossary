@@ -2,9 +2,7 @@
 title: "Web Accessibility"
 letter: "W"
 categories:
-  - "improve-reliability"
-  - "improve-maintainability"
-  - "front-end-applications"
+  - "frontend"
 shortDefinition: "Designing and building websites so that people with disabilities can perceive, understand, navigate, and interact with them."
 ---
 

@@ -2,8 +2,8 @@
 title: "Database Indexing"
 letter: "D"
 categories:
-  - "improve-performance"
-  - "back-end-applications"
+  - "data"
+  - "performance"
 shortDefinition: "A data structure technique that speeds up data retrieval by creating quick lookup references to rows in a database table."
 ---
 

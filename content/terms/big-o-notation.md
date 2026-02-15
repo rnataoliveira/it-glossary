@@ -2,8 +2,8 @@
 title: "Big O Notation"
 letter: "B"
 categories:
-  - "improve-performance"
-  - "explain-architecture"
+  - "architecture"
+  - "performance"
 shortDefinition: "A mathematical notation that describes the upper bound of an algorithm's time or space complexity as input size grows."
 ---
 

@@ -2,10 +2,8 @@
 title: "WebSockets"
 letter: "W"
 categories:
-  - "create-system-design"
-  - "explain-architecture"
-  - "back-end-applications"
-  - "front-end-applications"
+  - "backend"
+  - "frontend"
 shortDefinition: "A protocol that enables full-duplex, persistent communication between a client and server over a single TCP connection."
 ---
 

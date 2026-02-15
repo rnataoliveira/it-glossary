@@ -2,9 +2,8 @@
 title: "ACID"
 letter: "A"
 categories:
-  - "avoid-state-bugs"
-  - "improve-reliability"
-  - "back-end-applications"
+  - "data"
+  - "reliability"
 shortDefinition: "A set of four properties — Atomicity, Consistency, Isolation, Durability — that guarantee reliable database transactions."
 ---
 

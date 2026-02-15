@@ -2,9 +2,8 @@
 title: "Event-Driven Architecture"
 letter: "E"
 categories:
-  - "create-system-design"
-  - "explain-architecture"
-  - "improve-maintainability"
+  - "architecture"
+  - "backend"
 shortDefinition: "A design pattern where components communicate by producing and consuming events, enabling loose coupling and asynchronous processing."
 ---
 

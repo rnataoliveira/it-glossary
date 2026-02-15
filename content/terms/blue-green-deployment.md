@@ -2,8 +2,8 @@
 title: "Blue-Green Deployment"
 letter: "B"
 categories:
-  - "improve-reliability"
-  - "improve-maintainability"
+  - "devops"
+  - "reliability"
 shortDefinition: "A release strategy that runs two identical production environments, switching traffic from the old version to the new one instantly."
 ---
 

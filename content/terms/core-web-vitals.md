@@ -2,9 +2,8 @@
 title: "Core Web Vitals"
 letter: "C"
 categories:
-  - "improve-performance"
-  - "front-end-applications"
-  - "observability"
+  - "frontend"
+  - "performance"
 shortDefinition: "A set of Google-defined metrics — LCP, INP, and CLS — that measure real-world user experience for loading, interactivity, and visual stability."
 ---
 

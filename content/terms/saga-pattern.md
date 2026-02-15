@@ -2,8 +2,8 @@
 title: "Saga Pattern"
 letter: "S"
 categories:
-  - "create-system-design"
-  - "avoid-state-bugs"
+  - "architecture"
+  - "backend"
 shortDefinition: "A sequence of local transactions where each step triggers the next, with compensating actions to undo changes if any step fails."
 ---
 

@@ -2,8 +2,7 @@
 title: "Single Page Application"
 letter: "S"
 categories:
-  - "explain-architecture"
-  - "front-end-applications"
+  - "frontend"
 shortDefinition: "A web app that loads a single HTML page and dynamically updates content via JavaScript without full page reloads."
 ---
 

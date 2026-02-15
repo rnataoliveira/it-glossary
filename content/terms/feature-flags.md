@@ -2,9 +2,8 @@
 title: "Feature Flags"
 letter: "F"
 categories:
-  - "improve-reliability"
-  - "improve-maintainability"
-  - "improve-developer-experience"
+  - "devops"
+  - "reliability"
 shortDefinition: "Toggles that allow enabling or disabling features at runtime without deploying new code."
 ---
 

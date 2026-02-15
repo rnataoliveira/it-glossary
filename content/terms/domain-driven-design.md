@@ -2,8 +2,7 @@
 title: "Domain-Driven Design"
 letter: "D"
 categories:
-  - "explain-architecture"
-  - "improve-maintainability"
+  - "architecture"
 shortDefinition: "A software design approach that models code around the business domain, using a shared language between developers and domain experts."
 ---
 

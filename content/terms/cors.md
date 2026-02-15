@@ -2,10 +2,8 @@
 title: "CORS"
 letter: "C"
 categories:
-  - "improve-reliability"
-  - "explain-architecture"
-  - "improve-security"
-  - "front-end-applications"
+  - "security"
+  - "backend"
 shortDefinition: "Cross-Origin Resource Sharing — a browser security mechanism that controls which domains can make HTTP requests to your server."
 ---
 

@@ -2,10 +2,7 @@
 title: "Progressive Web App"
 letter: "P"
 categories:
-  - "explain-architecture"
-  - "improve-reliability"
-  - "front-end-applications"
-  - "mobile-development"
+  - "frontend"
 shortDefinition: "A web application that uses modern browser features like service workers and manifests to deliver app-like experiences."
 ---
 
