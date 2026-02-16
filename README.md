@@ -120,12 +120,18 @@ The filename becomes the URL slug (`your-term.md` → `/term/your-term`). Push t
 
 ### Available categories
 
-- `improve-performance`
-- `explain-architecture`
-- `create-system-design`
-- `avoid-state-bugs`
-- `improve-maintainability`
-- `improve-reliability`
+- `architecture` — Architecture & Patterns
+- `backend` — Backend
+- `frontend` — Frontend
+- `cloud` — Cloud & Platforms
+- `devops` — DevOps & Infrastructure
+- `data` — Data & Storage
+- `security` — Security
+- `testing` — Testing
+- `ai-ml` — AI & Machine Learning
+- `design-systems` — Design Systems
+- `performance` — Performance & Scaling
+- `reliability` — Reliability & Observability
 
 ---
 
@@ -156,6 +162,12 @@ To set up on a new repo:
 1. Go to **Settings → Pages**
 2. Set **Source** to **GitHub Actions**
 3. Push to `main` — the workflow handles the rest
+
+---
+
+## Contributing
+
+Want to add a term or suggest one? See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to participate.
 
 ---
 

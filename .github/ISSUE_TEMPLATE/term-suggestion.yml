@@ -1,0 +1,40 @@
+name: Term Suggestion
+description: Suggest a new term for the IT Glossary
+title: "[Term] "
+labels: ["term-suggestion"]
+body:
+  - type: input
+    id: term-name
+    attributes:
+      label: Term name
+      placeholder: e.g. WebSocket
+    validations:
+      required: true
+
+  - type: textarea
+    id: why-include
+    attributes:
+      label: Why should this term be included?
+      placeholder: Explain why this term is useful for developers to understand.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Suggested category
+      options:
+        - Architecture & Patterns
+        - Backend
+        - Frontend
+        - Cloud & Platforms
+        - DevOps & Infrastructure
+        - Data & Storage
+        - Security
+        - Testing
+        - AI & Machine Learning
+        - Design Systems
+        - Performance & Scaling
+        - Reliability & Observability
+    validations:
+      required: true
