@@ -3,6 +3,7 @@ title: "Design Patterns"
 letter: "D"
 categories:
   - "architecture"
+  - "design-patterns"
 shortDefinition: "Reusable solutions to commonly occurring problems in software design, providing a shared vocabulary for developers."
 ---
 

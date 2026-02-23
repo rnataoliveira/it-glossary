@@ -10,6 +10,7 @@ export const categories: Category[] = [
   { slug: "security", label: "Security" },
   { slug: "testing", label: "Testing" },
   { slug: "ai-ml", label: "AI & Machine Learning" },
+  { slug: "design-patterns", label: "Design Patterns" },
   { slug: "design-systems", label: "Design Systems" },
   { slug: "performance", label: "Performance & Scaling" },
   { slug: "reliability", label: "Reliability & Observability" },
