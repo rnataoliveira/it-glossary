@@ -7,6 +7,10 @@ import { Term, TermMeta, TermSection } from "@/types";
 
 const termsDirectory = path.join(process.cwd(), "content/terms");
 
+export function stripHtml(html: string): string {
+  return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
 export function getAllSlugs(): string[] {
   return fs
     .readdirSync(termsDirectory)

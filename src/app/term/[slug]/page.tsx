@@ -1,6 +1,7 @@
-import { getAllSlugs, getTermBySlug } from "@/lib/terms";
+import { getAllSlugs, getTermBySlug, stripHtml } from "@/lib/terms";
 import { categories } from "@/lib/categories";
 import TermSection from "@/components/TermSection";
+import VoiceReader from "@/components/VoiceReader";
 import Link from "next/link";
 
 export async function generateStaticParams() {
@@ -24,11 +25,18 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
     .map((slug) => categories.find((c) => c.slug === slug)?.label)
     .filter(Boolean);
 
+  const readableText = [
+    term.title + ".",
+    term.shortDefinition,
+    ...term.sections.map((s) => `${s.heading}. ${stripHtml(s.content)}`),
+  ].join(" ");
+
   return (
     <article>
       <Link
         href="/"
-        className="text-sm text-blue-600 hover:text-blue-800 transition-colors mb-6 inline-block"
+        aria-label="Back to all terms"
+        className="text-sm text-blue-600 hover:text-blue-800 transition-colors mb-6 inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
       >
         &larr; Back to all terms
       </Link>
@@ -56,6 +64,8 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
             ))}
           </div>
         )}
+
+        <VoiceReader text={readableText} />
 
         {term.sections.map((section, i) => (
           <TermSection key={i} section={section} />
