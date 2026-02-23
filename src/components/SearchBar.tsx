@@ -24,18 +24,23 @@ export default function SearchBar({ value, onChange }: SearchBarProps) {
 
   return (
     <div className="relative">
+      <label htmlFor="search-input" className="sr-only">
+        Search terms
+      </label>
       <input
-        type="text"
+        id="search-input"
+        type="search"
         placeholder="Search terms..."
         value={localValue}
         onChange={handleChange}
-        className="w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow"
+        className="w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow"
       />
       <svg
         className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
+        aria-hidden="true"
       >
         <path
           strokeLinecap="round"

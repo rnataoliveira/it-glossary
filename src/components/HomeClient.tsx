@@ -78,7 +78,7 @@ export default function HomeClient({ terms }: HomeClientProps) {
         onToggle={toggleCategory}
       />
       <div className="pt-2">
-        <p className="text-sm text-gray-400 mb-3">
+        <p className="text-sm text-gray-400 mb-3" aria-live="polite" aria-atomic="true">
           {filtered.length} {filtered.length === 1 ? "term" : "terms"}
         </p>
         <TermList terms={filtered} />
