@@ -3,6 +3,7 @@ title: "Progressive Web App"
 letter: "P"
 categories:
   - "frontend"
+  - "mobile"
 shortDefinition: "A web application that uses modern browser features like service workers and manifests to deliver app-like experiences."
 ---
 

@@ -2,10 +2,10 @@
 
 import { useState, useMemo } from "react";
 import { TermMeta } from "@/types";
-import { categories } from "@/lib/categories";
+import { categoryGroups } from "@/lib/categories";
 import SearchBar from "./SearchBar";
 import AlphabetNav from "./AlphabetNav";
-import CategoryFilter from "./CategoryFilter";
+import CategorySidebar from "./CategorySidebar";
 import TermList from "./TermList";
 
 interface HomeClientProps {
@@ -65,23 +65,27 @@ export default function HomeClient({ terms }: HomeClientProps) {
   }
 
   return (
-    <div className="space-y-6">
-      <SearchBar value={search} onChange={setSearch} />
-      <AlphabetNav
-        activeLetter={activeLetter}
-        availableLetters={availableLetters}
-        onSelect={setActiveLetter}
-      />
-      <CategoryFilter
-        categories={categories}
+    <div className="flex gap-8 items-start">
+      <CategorySidebar
+        groups={categoryGroups}
         selected={selectedCategories}
         onToggle={toggleCategory}
+        onClearAll={() => setSelectedCategories(new Set())}
       />
-      <div className="pt-2">
-        <p className="text-sm text-gray-400 mb-3" aria-live="polite" aria-atomic="true">
-          {filtered.length} {filtered.length === 1 ? "term" : "terms"}
-        </p>
-        <TermList terms={filtered} />
+
+      <div className="flex-1 min-w-0 space-y-6">
+        <SearchBar value={search} onChange={setSearch} />
+        <AlphabetNav
+          activeLetter={activeLetter}
+          availableLetters={availableLetters}
+          onSelect={setActiveLetter}
+        />
+        <div className="pt-2">
+          <p className="text-sm text-gray-400 mb-3" aria-live="polite" aria-atomic="true">
+            {filtered.length} {filtered.length === 1 ? "term" : "terms"}
+          </p>
+          <TermList terms={filtered} />
+        </div>
       </div>
     </div>
   );

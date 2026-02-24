@@ -4,6 +4,7 @@ letter: "S"
 categories:
   - "frontend"
   - "performance"
+  - "mobile"
 shortDefinition: "A browser API that runs a script in the background, separate from the web page, enabling features like offline caching, push notifications, and network request interception."
 ---
 

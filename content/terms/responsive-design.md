@@ -3,6 +3,7 @@ title: "Responsive Design"
 letter: "R"
 categories:
   - "frontend"
+  - "mobile"
 shortDefinition: "A design approach where web pages adapt their layout and content to fit any screen size or device."
 ---
 

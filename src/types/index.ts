@@ -3,6 +3,12 @@ export interface Category {
   label: string;
 }
 
+export interface CategoryGroup {
+  slug: string;
+  label: string;
+  categories: Category[];
+}
+
 export interface TermMeta {
   slug: string;
   title: string;

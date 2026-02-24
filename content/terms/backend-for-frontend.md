@@ -4,6 +4,7 @@ letter: "B"
 categories:
   - "architecture"
   - "backend"
+  - "mobile"
 shortDefinition: "A dedicated backend service tailored to the specific needs of a single frontend application or client type."
 ---
 
