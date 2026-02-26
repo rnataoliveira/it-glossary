@@ -65,7 +65,7 @@ export default function HomeClient({ terms }: HomeClientProps) {
   }
 
   return (
-    <div className="flex gap-8 items-start">
+    <div className="flex flex-col md:flex-row gap-8 items-start">
       <CategorySidebar
         groups={categoryGroups}
         selected={selectedCategories}
